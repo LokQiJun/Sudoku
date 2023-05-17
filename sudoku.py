@@ -1,20 +1,12 @@
 import input_processing as ip
-
-def read_user_input():
-    user_input = []
-    with open('input.txt') as f:
-        while True:
-            line = f.readline()
-            user_input.append(line.strip())
-            if not line:
-                return user_input
+from file_reader import get_user_input
         
 def print_output_list(user_input):    
     print ("Output:")
     print (*user_input, sep="\n")
 
 def main():
-    user_input = read_user_input()
+    user_input = get_user_input()
     row_flags = ip.row_checks(user_input)
     column_flags = ip.column_checks(user_input)
     box_flags = ip.box_checks(user_input)
