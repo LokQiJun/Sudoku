@@ -10,12 +10,13 @@ def main():
     row_flags = ip.row_checks(user_input)
     column_flags = ip.column_checks(user_input)
     box_flags = ip.box_checks(user_input)
-    print(row_flags)
-    print(column_flags)
-    print(box_flags)
+    # print(row_flags)
+    # print(column_flags)
+    # print(box_flags)
 
 if __name__ == "__main__":
     main()
+    
 '''
 Algorithm
 Save as 2D matrix

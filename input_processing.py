@@ -8,10 +8,9 @@ def row_checks(user_input):
         row_flags = sample_flags.copy()
         for j in range(9):
             element = int(user_input[i][j])
-            if element == 0:
-                row_flags[element] = False
-            else:
-                row_flags[element] = True
+            if element != 0 and row_flags[element] == True:
+                exit("There is clashing entry on row " + str(i+1))
+            row_flags[element] = True
         compiled_checks.append(row_flags)
     return compiled_checks
 
@@ -21,6 +20,8 @@ def column_checks(user_input):
         column_flags = sample_flags.copy()
         for j in range(9):
             element = int(user_input[j][i])
+            if element != 0 and column_flags[element] == True:
+                exit("There is clashing entry on column " + str(i+1))
             column_flags[element] = True
         compiled_checks.append(column_flags)
     return compiled_checks
@@ -28,7 +29,7 @@ def column_checks(user_input):
 def box_identifier(rol, col):
     row_num = floor(rol/3)
     col_num = floor(col/3)
-    return row_num * 3 + col_num
+    return row_num + col_num * 3
 
 def box_checks(user_input):
     compiled_checks = []
@@ -39,6 +40,8 @@ def box_checks(user_input):
         for j in range(9):
             box_num = box_identifier(i, j)
             element = int(user_input[j][i])
+            if element != 0 and compiled_checks[box_num][element] == True:
+                exit("There is clashing entry on box " + str(box_num+1))
             compiled_checks[box_num][element] = True
     return compiled_checks
             
