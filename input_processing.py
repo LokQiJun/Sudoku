@@ -26,7 +26,7 @@ def column_checks(user_input):
         compiled_checks.append(column_flags)
     return compiled_checks
 
-def box_identifier(rol, col):
+def get_box_number(rol, col):
     row_num = floor(rol/3)
     col_num = floor(col/3)
     return row_num + col_num * 3
@@ -38,10 +38,17 @@ def box_checks(user_input):
         compiled_checks.append(box_flags)
     for i in range(9):
         for j in range(9):
-            box_num = box_identifier(i, j)
+            box_num = get_box_number(i, j)
             element = int(user_input[j][i])
             if element != 0 and compiled_checks[box_num][element] == True:
                 exit("There is clashing entry on box " + str(box_num+1))
             compiled_checks[box_num][element] = True
     return compiled_checks
-            
+
+def find_zero_locations(user_input):
+    zero_locations = []
+    for i in range(9):
+        for j in range(9):
+            if user_input[i][j] == '0':
+                zero_locations.append([i, j])
+    return zero_locations
