@@ -29,7 +29,7 @@ def column_checks(user_input):
 def get_box_number(rol, col):
     row_num = floor(rol/3)
     col_num = floor(col/3)
-    return row_num + col_num * 3
+    return row_num * 3 + col_num
 
 def box_checks(user_input):
     compiled_checks = []
@@ -39,7 +39,7 @@ def box_checks(user_input):
     for i in range(9):
         for j in range(9):
             box_num = get_box_number(i, j)
-            element = int(user_input[j][i])
+            element = int(user_input[i][j])
             if element != 0 and compiled_checks[box_num][element] == True:
                 exit("There is clashing entry on box " + str(box_num+1))
             compiled_checks[box_num][element] = True

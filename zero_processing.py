@@ -10,6 +10,9 @@ def get_all_possible_values(row_flags, column_flags, box_flags, zero_positions):
 def get_possible_value(row_flags, column_flags, box_flags, row, column):
     overall_flags = np.logical_or(np.logical_or(row_flags[row], column_flags[column]), 
                                   box_flags[get_box_number(row, column)])
+    
+    print(get_box_number(row, column), f"{row} {column}\n{overall_flags}")
+    
     possible_values = []
     for i in range (len(overall_flags)):
         if overall_flags[i] == False:
