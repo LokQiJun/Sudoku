@@ -2,6 +2,13 @@ from math import floor
 
 sample_flags = [False, False, False, False, False, False, False, False, False, False]
 
+def input_checks(user_input):
+    row_flags = row_checks(user_input)
+    column_flags = column_checks(user_input)
+    box_flags = box_checks(user_input)
+    zero_locations = find_zero_locations(user_input)
+    return row_flags, column_flags, box_flags, zero_locations
+
 def row_checks(user_input):
     compiled_checks = []
     for i in range(9):
