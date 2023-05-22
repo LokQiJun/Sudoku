@@ -3,18 +3,21 @@ from math import floor
 
 def solve(user_input, possibility_matrix):
     has_update = True
+    counter = 0
     while(has_update):
+        counter += 1
+        print(counter)
         has_update = False
-        row_counter = [[] for x in range(10) ]
-        col_counter = [[] for x in range(10) ]
-        box_counter = [[] for x in range(10) ]
         for i in range(9):
+            row_counter = [[] for x in range(10) ]
+            col_counter = [[] for x in range(10) ]
+            box_counter = [[] for x in range(10) ]
             for j in range(9):
                 for k in range(len(possibility_matrix[i][j])):
                     row_counter[possibility_matrix[i][j][k]].append((i, j))
                 for k in range(len(possibility_matrix[j][i])):
                     col_counter[possibility_matrix[j][i][k]].append((j, i))
-                    
+            
             for i in range(10):
                 if len(row_counter[i]) == 1:
                     update_user_input(user_input, row_counter[i][0], i)
