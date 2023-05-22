@@ -12,9 +12,10 @@ def main():
     user_input = get_user_input()
     row_flags, column_flags, box_flags, zero_locations = input_checks(user_input)
     possibility_matrix = zp(row_flags, column_flags, box_flags, zero_locations)
-    print_status(10000, zero_locations, row_flags, column_flags, box_flags, possibility_matrix)
-    # solve(user_input, possibility_matrix)
-    # print_output_list(user_input)
+    # print_status(10000, zero_locations, row_flags, column_flags, box_flags, possibility_matrix)
+    solve(user_input, possibility_matrix)
+    # print_status(10000, zero_locations, row_flags, column_flags, box_flags, possibility_matrix)
+    print_output_list(user_input)
     
 if __name__ == "__main__":
     main()

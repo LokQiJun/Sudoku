@@ -10,7 +10,7 @@ def get_all_possible_values(row_flags, column_flags, box_flags, zero_positions):
         possible_values = get_possible_value(row_flags, column_flags, box_flags, 
                                              zero_positions[i][0], zero_positions[i][1])
         # zero_positions[i].append(possible_values)
-        possibility_matrix[zero_positions[i][0]][zero_positions[i][1]].append(possible_values)
+        possibility_matrix[zero_positions[i][0]][zero_positions[i][1]].extend(possible_values)
         
     return possibility_matrix
     
