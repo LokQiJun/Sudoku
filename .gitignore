@@ -32,3 +32,4 @@
 *.app
 /.vs
 /__pycache__
+testing.py

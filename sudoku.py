@@ -11,9 +11,9 @@ def print_output_list(user_input):
 def main():
     user_input = get_user_input()
     row_flags, column_flags, box_flags, zero_locations = input_checks(user_input)
-    zp(row_flags, column_flags, box_flags, zero_locations)
-    # print_status(zero_locations, row_flags, column_flags, box_flags)
-    solve(user_input, zero_locations)
+    possibility_matrix = zp(row_flags, column_flags, box_flags, zero_locations)
+    # print_status(11111, zero_locations, row_flags, column_flags, box_flags, possibility_matrix)
+    solve(user_input, possibility_matrix)
     print_output_list(user_input)
     
 if __name__ == "__main__":
@@ -22,6 +22,8 @@ if __name__ == "__main__":
 '''
 Algorithm
 Save as 2D matrix
-Create array of size 81 that store possible values in empty squares
-For all '0', check row, column and box
+Get all unused value for row, column and box
+Get all possible value for each 0
+Create 9x9 matrix of list (overall 3D matrix) append possible values to location of zero
+implement a counter list to travel row by row, column by column & box by box
 '''
