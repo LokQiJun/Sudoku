@@ -13,10 +13,16 @@ def solve(user_input, possibility_matrix):
             col_counter = [[] for x in range(10) ]
             box_counter = [[] for x in range(10) ]
             for j in range(9):
-                for k in range(len(possibility_matrix[i][j])):
-                    row_counter[possibility_matrix[i][j][k]].append((i, j))
-                for k in range(len(possibility_matrix[j][i])):
-                    col_counter[possibility_matrix[j][i][k]].append((j, i))
+                if len(possibility_matrix[i][j]) == 1:
+                    update_user_input(user_input, (i, j), possibility_matrix[i][j][0])
+                else:
+                    for k in range(len(possibility_matrix[i][j])):
+                        row_counter[possibility_matrix[i][j][k]].append((i, j))
+                if len(possibility_matrix[j][i]) == 1:
+                    update_user_input(user_input, (j, i), possibility_matrix[j][i][0])
+                else:
+                    for k in range(len(possibility_matrix[j][i])):
+                        col_counter[possibility_matrix[j][i][k]].append((j, i))
             
             for i in range(10):
                 if len(row_counter[i]) == 1:

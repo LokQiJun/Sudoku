@@ -33,3 +33,4 @@
 /.vs
 /__pycache__
 testing.py
+output.txt
