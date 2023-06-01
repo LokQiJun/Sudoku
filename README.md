@@ -1,10 +1,26 @@
 # Sudoku
 
 Input sample puzzle in input.txt
-Use 0 to indicate empty boxes
-E.g.
-https://sandiway.arizona.edu/sudoku/examples.html
 
+Use 0 to indicate empty boxes
+
+Run sudoku.py
+
+E.g.
+|<!-- -->|<!-- -->|<!-- -->|<!-- -->|<!-- -->|<!-- -->|<!-- -->|<!-- -->|<!-- -->|
+|-|-|-|-|-|-|-|-|-|
+| | | |2|6| |7| |1|
+|6|8| | |7| | |9| |
+|1|9| | | |4|5| | |
+|8|2| |1| | | |4| |
+| | |4|6| |2|9| | |
+| |5| | | |3| |2|8|
+| | |9|3| | | |7|4|
+| |4| | |5| | |3|6|
+|7| |3| |1|8| | | |
+
+Input:
+```
 000260701
 680070090
 190004500
@@ -14,3 +30,4 @@ https://sandiway.arizona.edu/sudoku/examples.html
 009300074
 040050036
 703018000
+```
