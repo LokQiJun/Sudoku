@@ -13,7 +13,6 @@ def solve(user_input, pm):
         for i in range(9):
             row_counter = [[] for x in range(10) ]
             col_counter = [[] for x in range(10) ]
-            box_counter = [[] for x in range(10) ]
             for j in range(9):
                 if len(pm[i][j]) == 1:
                     has_update = update_value(user_input, pm, (i,j), pm[i][j][0])
@@ -37,11 +36,8 @@ def solve(user_input, pm):
                     
         if has_update == False:
             for i in range(9):
-                has_update = has_update or locate_hidden_subset(pm, row_counter_list[i], i, dir_row)
-                has_update = has_update or locate_hidden_subset(pm, col_counter_list[i], i, dir_col)
-
-def locate_naked_subset(possibility_matrix):
-    return False
+                has_update = locate_hidden_subset(pm, row_counter_list[i], i, dir_row)
+                has_update = locate_hidden_subset(pm, col_counter_list[i], i, dir_col)
       
 def locate_hidden_subset(possibility_matrix, counters, num, dir):
     print(dir)
